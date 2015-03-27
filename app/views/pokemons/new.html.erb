@@ -1,0 +1,5 @@
+<h2>Create A New Pokemon!!!</h2>
+<%= simple_form_for @pokemon do |f| %>
+  <%= f.input :name, label: "What name would like to give?"%>
+  <%= f.button :submit %>
+<% end %>

@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141018092449) do
+ActiveRecord::Schema.define(version: 20150327044605) do
+
+  create_table "pokemons", force: true do |t|
+    t.string   "name"
+    t.integer  "level"
+    t.integer  "trainer_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "health"
+  end
+
+  add_index "pokemons", ["trainer_id"], name: "index_pokemons_on_trainer_id"
 
   create_table "trainers", force: true do |t|
     t.string   "email",                  default: "", null: false
